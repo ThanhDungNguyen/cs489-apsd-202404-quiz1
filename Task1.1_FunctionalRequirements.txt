@@ -1,0 +1,11 @@
+Functional Requirements of Contacts Application
+
+1. Actors
+- User
+
+2. Features
+- Users can search through the contacts
+- Users can add new contacts
+- Users can update existing contacts
+- Users can delete old contacts
+- Users can merge duplicate contacts
