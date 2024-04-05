@@ -120,8 +120,32 @@ public class Contact {
                 firstName, lastName, company, jobTitle);
     }
 
-    public String toJSON(){
-        return String.format("{\"firstName\"=\"%s\", \"lastName\"=\"%s\", \"company\"=\"%s\", \"jobTitle\"=\"%s\"}",
-                firstName, lastName, company, jobTitle);
+    public String toJSON() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("{");
+        if (phoneNumbers != null) {
+            for (int i = 0; i < phoneNumbers.size(); i++) {
+                stringBuilder.append(phoneNumbers.get(i));
+                if (i < (phoneNumbers.size() - 1))
+                    stringBuilder.append(",");
+            }
+        }
+        stringBuilder.append("}");
+        String phoneNumbersJSON = stringBuilder.toString();
+
+        stringBuilder.delete(0, stringBuilder.toString().length());
+        stringBuilder.append("{");
+        if (emailAddresses != null) {
+            for (int i = 0; i < emailAddresses.size(); i++) {
+                stringBuilder.append(emailAddresses.get(i));
+                if (i < (emailAddresses.size() - 1))
+                    stringBuilder.append(",");
+            }
+        }
+        stringBuilder.append("}");
+        String emailAddressesJSON = stringBuilder.toString();
+
+        return String.format("{\"firstName\"=\"%s\", \"lastName\"=\"%s\", \"company\"=\"%s\", \"jobTitle\"=\"%s\", \"phoneNumbers\":%s, , \"emailAddress\":%s}",
+                firstName, lastName, company, jobTitle, phoneNumbersJSON, emailAddressesJSON);
     }
 }
