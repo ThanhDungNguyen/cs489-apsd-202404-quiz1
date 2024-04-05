@@ -125,7 +125,7 @@ public class Contact {
         stringBuilder.append("{");
         if (phoneNumbers != null) {
             for (int i = 0; i < phoneNumbers.size(); i++) {
-                stringBuilder.append(phoneNumbers.get(i));
+                stringBuilder.append(phoneNumbers.get(i).toJSON());
                 if (i < (phoneNumbers.size() - 1))
                     stringBuilder.append(",");
             }
@@ -137,7 +137,7 @@ public class Contact {
         stringBuilder.append("{");
         if (emailAddresses != null) {
             for (int i = 0; i < emailAddresses.size(); i++) {
-                stringBuilder.append(emailAddresses.get(i));
+                stringBuilder.append(emailAddresses.get(i).toJSON());
                 if (i < (emailAddresses.size() - 1))
                     stringBuilder.append(",");
             }
