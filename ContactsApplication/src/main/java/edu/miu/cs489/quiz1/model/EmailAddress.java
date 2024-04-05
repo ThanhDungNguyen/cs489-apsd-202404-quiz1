@@ -24,4 +24,8 @@ public class EmailAddress extends Channel {
     public String toString() {
         return String.format("EmailAddress{label='%s', address='%s'}", getLabel(), address);
     }
+
+    public String toJSON(){
+        return String.format("{\"label\"=\"%s\", \"address\"=\"%s\"}", getLabel(), address);
+    }
 }

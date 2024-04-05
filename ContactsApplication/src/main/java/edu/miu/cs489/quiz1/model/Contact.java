@@ -119,4 +119,9 @@ public class Contact {
         return String.format("Contact{firstName='%s', lastName='%s', company='%s', jobTitle='%s'}",
                 firstName, lastName, company, jobTitle);
     }
+
+    public String toJSON(){
+        return String.format("{\"firstName\"=\"%s\", \"lastName\"=\"%s\", \"company\"=\"%s\", \"jobTitle\"=\"%s\"}",
+                firstName, lastName, company, jobTitle);
+    }
 }

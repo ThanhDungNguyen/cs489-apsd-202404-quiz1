@@ -22,6 +22,10 @@ public class PhoneNumber extends Channel {
 
     @Override
     public String toString() {
-        return String.format("PhoneNumber{label='%d', number='%d'}", getLabel(), number);
+        return String.format("PhoneNumber{label='%s', number='%s'}", getLabel(), number);
+    }
+
+    public String toJSON(){
+        return String.format("{\"label\"=\"%s\", \"number\"=\"%s\"}", getLabel(), number);
     }
 }

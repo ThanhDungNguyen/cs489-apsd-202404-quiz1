@@ -19,5 +19,6 @@ public class Main {
                         List.of(new PhoneNumber("Work", "412-116-9988")),
                         List.of(new EmailAddress("Work", "ali@bmi.com")))
         );
+        contacts.stream().forEach(c -> System.out.println(c.toJSON()));
     }
 }
