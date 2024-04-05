@@ -4,6 +4,7 @@ import edu.miu.cs489.quiz1.model.Contact;
 import edu.miu.cs489.quiz1.model.EmailAddress;
 import edu.miu.cs489.quiz1.model.PhoneNumber;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -19,6 +20,8 @@ public class Main {
                         List.of(new PhoneNumber("Work", "412-116-9988")),
                         List.of(new EmailAddress("Work", "ali@bmi.com")))
         );
-        contacts.stream().forEach(c -> System.out.println(c.toJSON()));
+        contacts.stream()
+                .sorted(Comparator.comparing(Contact::getLastName))
+                .forEach(c -> System.out.println(c.toJSON()));
     }
 }
