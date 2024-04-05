@@ -145,7 +145,7 @@ public class Contact {
         stringBuilder.append("}");
         String emailAddressesJSON = stringBuilder.toString();
 
-        return String.format("{\"firstName\"=\"%s\", \"lastName\"=\"%s\", \"company\"=\"%s\", \"jobTitle\"=\"%s\", \"phoneNumbers\":%s, , \"emailAddress\":%s}",
+        return String.format("{\"firstName\"=\"%s\", \"lastName\"=\"%s\", \"company\"=\"%s\", \"jobTitle\"=\"%s\", \"phoneNumbers\":%s, \"emailAddress\":%s}",
                 firstName, lastName, company, jobTitle, phoneNumbersJSON, emailAddressesJSON);
     }
 }
